@@ -1,8 +1,11 @@
 #include <stdio.h>
 int main()
 {
-    int a=4,b=5,sum =0;
- sum = a +b;
+    int a, b,sum =0;
+    printf("Please Enter two values: \t");
+    scanf("%d",&a);
+    scanf("%d",&b);
+ sum = a + b;
     printf("%d",sum);
     return 0;
 }
