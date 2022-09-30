@@ -5,7 +5,7 @@ int main()
 {
     FILE *pint = fopen("file.txt","w");
     int number;
-    printf("Entera phone number: ");
+    printf("Enter a phone number: ");
     scanf("%d",&number);
     fprintf(pint, "%d",number);
     fclose(pint);
