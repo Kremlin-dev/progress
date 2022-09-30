@@ -4,10 +4,10 @@
 int main()
 {
     FILE *pint = fopen("file.txt","w");
-    int number;
+    int number[20];
     printf("Enter a phone number: ");
-    scanf("%d",&number);
-    fprintf(pint, "%d",number);
+    scanf("%s",&number);
+    fputs(number,pint);
     fclose(pint);
     return 0;
 }
