@@ -1,23 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+// Reading and writing into a file
 int main(){
+// Declaring file pointers and modes
     FILE *in =fopen("name.txt","r");
-    char firstName[20];
-    char lastName[20];
-    char name[40];
-    int i;
-    for(i=0; i<2;i++){
-
-    fscanf(in, "%s",firstName);
+    FILE *out =fopen("proj.txt","w");
+    char firstName[100];
+    char lastName[100];
+    char name[300];
+    int i,hour;
+// Using a for loop to write and read from a file
+    for(i=0; i<7;i++){
+    fscanf(in, "%s %s %d",firstName,lastName,&hour);
     strcpy(name, firstName);
     strcat(name, " ");
-    fscanf(in, "%s",lastName);
     strcat(name, lastName);
-    printf("%s\n",name);
-    }
+    fprintf(out, "%s\t %20d\n",name,hour);
+    //fprintf(out, "%5d",hour);
+    } 
     fclose(in);
+    fclose(out);
     
     return 0;
 }
