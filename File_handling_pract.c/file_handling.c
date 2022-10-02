@@ -6,7 +6,7 @@ int main()
     FILE *in =fopen("laxer.txt", "w");
     int num;
     char alph = 'y';
-    char stri[] = "Hello";
+    char stri[2] = "Hello";
     printf("Enter a value: ");
     scanf("%d",&num);
     fputs(stri, in);
