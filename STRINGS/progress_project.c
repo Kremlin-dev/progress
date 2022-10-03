@@ -10,8 +10,8 @@ int main(){
     char firstName[100];
     char lastName[100];
     char name[300];
-    int i,hour;
-    int rate;
+    int i,hour,rate;
+    
 // Using a for loop to write and read from a file
 
     for(i=0; i<4;i++){
