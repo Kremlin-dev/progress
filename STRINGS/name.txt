@@ -1,7 +1,8 @@
-Ama Ampons	                45
-Moses Waja	                   10
-josepg amp	                   21
-salim adams	                   78
-selorm mil	                   45
-kremlin amp	                   78
-forunze gh	                   78
+
+Ama Ampons	                45        
+Moses Waja	                   10    
+josepg amp	                   21    
+salim adams	                   78    
+selorm mil	                   45     
+kremlin amp	                   78     
+forunze gh	                   78     
