@@ -10,26 +10,22 @@ int main(){
     char lastName[100];
     char name[300];
     int i,hour;
+    int rate;
 // Using a for loop to write and read from a file
-    fprintf(out, "NAME");
-    fprintf(out, "  \t\t");
-    fprintf(out, "HOURS");
-    fprintf(out, "  \t\t");
-    fprintf(out, "RATE");
-    //fprintf(out, "  \t");
-    //fprintf(out, "RATE\t\t\t");
-/**
-    for(i=0; i<7;i++){
-    fscanf(in, "%s %s %d",firstName,lastName,&hour);
+
+    for(i=0; i<4;i++){
+    fscanf(in, "%s",firstName);
+    fscanf(in, " %s %d %d",lastName,&hour,&rate);
     strcpy(name, firstName);
-    strcat(name, " ");
+    strcat(name, "  ");
     strcat(name, lastName);
-    fprintf(out, "%s\t %d\n",name,hour);
+    fprintf(out, "%s\t %10d %10d",name,hour,rate);
+    fprintf(out,"\n");
     //fprintf(out, "%5d",hour);
-    } 
+    }
     fclose(in);
     fclose(out);
-    **/
-    
+
+
     return 0;
 }
