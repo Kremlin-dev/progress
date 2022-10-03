@@ -21,8 +21,6 @@ int main(){
     strcat(name, lastName);
     fprintf(out, "%s\t %10d %10d",name,hour,rate);
     fprintf(out,"\n");
-    //fprintf(out, "%5d",hour);
-    }
     fclose(in);
     fclose(out);
 
