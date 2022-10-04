@@ -1,4 +1,6 @@
-Maggie  May	         50         12
-Akira  Kanda	         40         15
-Richard  Singh	         48         20
-Jamie  Barath	         30         18
+NAME		   HOUR	RATE  REG_PAY   OV_TIME
+
+Maggie  May	         50         12        600     216000
+Akira  Kanda	         40         15        600     180000
+Richard  Singh	         48         20        960     537600
+Jamie  Barath	         30         18        540      97200
