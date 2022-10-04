@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 #define MAX_REG_HOURS 20
-#define OVER_TIME_FACTOR 0.05
+#define OVER_TIME_FACTOR 1.5
 
  /**Reading and writing into a file
-This program reads data from a file, calculates regular pay and 
+This program reads data from a file, calculates regular pay and
 over_time pay of workers.
 **/
 int main(){
@@ -27,7 +27,7 @@ int main(){
     strcat(name, "  ");
     strcat(name, lastName);
     regpay = rate * hour;
-    ov_time = (hour -MAX_REG_HOURS)*rate*regpay*OVER_TIME_FACTOR;
+    ov_time = (hour -MAX_REG_HOURS)*rate*regpay;
 
     fprintf(out, "%s\t %10d %10d %10d %10d",name,hour,rate,regpay,ov_time);
     fprintf(out,"\n");
