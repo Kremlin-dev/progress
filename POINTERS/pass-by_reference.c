@@ -1,6 +1,6 @@
 //This program receives two values from a user and swaps them by passing by reference
 #include <stdio.h>
-//Void function prototype with pointer arguments
+//Void function declaration with pointer arguments
 void change(int *x,int *y);
 
 int main (){
@@ -8,8 +8,9 @@ int main (){
     change(&m,&n);
     printf("%d %d",m,n);
     return 0;
+
 }
-//function definition
+//function
 void change(int *x,int *y)
 {
     int temp = *x;
