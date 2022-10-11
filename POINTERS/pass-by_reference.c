@@ -13,7 +13,7 @@ int main (){
 //function
 void change(int *x,int *y)
 {
-    int temp = *x;
+    int temp = * x;
     *x = *y;
     *y = temp;
 }
