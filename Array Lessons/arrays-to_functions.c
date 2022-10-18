@@ -30,7 +30,7 @@ int summation(int B[], int size)
 
     for (i = 0; i < size; i++)
     {
-        sum += B[i];
+        sum += Bcd[i];
     }
     return (sum);
     
