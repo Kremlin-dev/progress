@@ -10,23 +10,25 @@
 struct node 
 {
     int data;
-    struct node *link;
+    struct node *next;
 };
 
 int main(void)
 {   
     struct node *head = malloc(sizeof(struct node));
-    head ->data = 12;
-    head ->link = NULL;
-
-    printf("%d\t", head ->data);
-
     struct node *current = malloc(sizeof(struct node));
-    current  ->data = 56;
-    current->link = NULL;
-    head ->link = current;
+    struct node *third = malloc(sizeof(struct node));
 
-     printf("%d", current ->data);
+    head ->data = 789;
+    head ->next = current;
+
+    current -> data = 45;
+    current ->next = third;
+
+    third ->data = 900;
+    third ->next = NULL;
+
+    printf("%d %d %d", head->data, current ->data, third ->data);
 
 
     return (0);
