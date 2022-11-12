@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 
-    typedef struct 
+     struct student
     {
         char name[20];
         int age;
         char id[10];
         int grade;
-    }student;
+    };
 
     /**
      *  main - Struct basics implementation
@@ -16,7 +16,7 @@
 
 int main(void)
 {
-   student Isaac;
+   struct student Isaac;
     
     strcpy(Isaac.name, "Isaac Amponsah");
     strcpy(Isaac.id, "03121450");
