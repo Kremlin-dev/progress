@@ -12,7 +12,14 @@ struct node
     int data;
     struct node *next;
 };
-
+void print(struct node *m)
+{
+    while (m != NULL)
+    {
+        printf("%d\t", m ->data);
+        m = m -> next;
+    }
+}
 int main(void)
 {   
     struct node *head = malloc(sizeof(struct node));
@@ -27,8 +34,9 @@ int main(void)
 
     third ->data = 900;
     third ->next = NULL;
+    print(head);
 
-    printf("%d %d %d", head->data, current ->data, third ->data);
+    //printf("%d %d %d", head->data, current ->data, third ->data);
 
 
     return (0);
