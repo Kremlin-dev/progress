@@ -31,8 +31,6 @@ int main(void)
         printf("%d", primiere_node -> data);
         primiere_node= primiere_node->next;
     }
-
-
     
     return (0);
 }

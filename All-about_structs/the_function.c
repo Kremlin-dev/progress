@@ -27,15 +27,13 @@ void Add_item(char *key, char *value)
         {
             num[i].key = key;
             num[i].value = value;  
-            //printf("num[%d]: %s %s ", i, num[i].key,num[i].value);
+            printf(" %s %s \n", num[i].key,num[i].value);
         }
         else
         {
-        printf("Name Exits on the List.\n");
-         printf("Please Save contact with a slight change in Name.\n");
-        }
-       
-        
+
+            printf("Name Exits on the List.\n");
+        }    
 
  }
 
