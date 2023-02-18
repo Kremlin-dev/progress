@@ -10,7 +10,14 @@
  * @size: size of items contained in the array
  * Return: sorted items
 */
-
+void print_swap(int *array, size_t size)
+{
+    int i;
+    for (i = 0; i < size; i++)
+    {
+        printf("%d ", array[i], i + 1 == size ? "}" : ", ");
+    }
+}
 void bubble_sort(int *array, size_t size)
 {
     int i, j, temp = 0;
@@ -24,7 +31,8 @@ void bubble_sort(int *array, size_t size)
                 temp = array[j];
                 array[j] = array[j + 1];
                 array[j + 1] = temp;
-                
+               print_swap(array, size);
+               printf("\n");
             }
         }
     }
@@ -32,10 +40,10 @@ void bubble_sort(int *array, size_t size)
 }
 
 int main() {
-    int arr[] = { 64, 34, 25, 12, 22, 11, 90 };
+    int arr[] = { 64, 34, 25};
     int n = sizeof(arr) / sizeof(arr[0]);
     bubble_sort(arr, n);
-    printf("Sorted array: ");
+    printf("Sorted array: \n");
     for (int i = 0; i < n; i++)
         printf("%d ", arr[i]);
     return 0;
