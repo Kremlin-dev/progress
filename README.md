@@ -1,2 +1,2 @@
 # progress
-To track my C-PROGRAMMING journey.
+To track my PROGRAMMING journey.
