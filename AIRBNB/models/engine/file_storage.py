@@ -11,13 +11,13 @@ class FileStorage():
 		self.__objects[key] = obj
 	def save(self):
 		with open(self.__file_path, "w", encoding="utf-8") as f:
-		p = {k: v.to_dict() for k, v in self.__objects.items()}
-		json.dump(p, f)
+			p = {k: v.to_dict() for k, v in self.__objects.items()}
+			json.dump(p, f)
 	def reload(self):
 		try:
-		with open(self.__file_path, "r", encoding="utf-8") as f:
-		p_dict = json.load(f)
-		p_dict = eval(self.__class__.__name__(p_dict))
+			with open(self.__file_path, "r", encoding="utf-8") as f:
+				p_dict = json.load(f)
+				p_dict = eval(self.__class__.__name__(p_dict))
 		except:
 			pass
 
