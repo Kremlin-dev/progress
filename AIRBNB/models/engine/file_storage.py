@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import json
 class FileStorage():
 	__file_path = "file.json"
@@ -16,6 +17,7 @@ class FileStorage():
 		try:
 		with open(self.__file_path, "r", encoding="utf-8") as f:
 		p_dict = json.load(f)
+		p_dict = eval(self.__class__.__name__(p_dict))
 		except:
 			pass
 
