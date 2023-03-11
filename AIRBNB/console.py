@@ -86,7 +86,7 @@ class HBNBCommand(cmd.Cmd):
 			print("** value missing **")
 		else:
 			obj_class = args[0]
-		 	obj_id = args[1]
+			obj_id = args[1]
 		 	key = obj_class + "." + obj_id
 			attribute_name = args[2]
 			attribute_value = args[3]
