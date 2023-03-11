@@ -3,9 +3,15 @@ import cmd
 from models.base_model import BaseModel
 from models import storage
 from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
+
 class HBNBCommand(cmd.Cmd):
 	prompt = "(hbnb) "
-	__classes = ["BaseModel", "User"]
+	__classes = ["BaseModel", "User", "State","City", "Amenity", "Place","Review"]
 	def do_quit(self, arg):
 		"""Quit command to exit console 
 		"""
@@ -78,8 +84,24 @@ class HBNBCommand(cmd.Cmd):
 			print("** attribute name missing **")
 		elif (len(args) == 3):
 			print("** value missing **")
+		else:
+		 	obj_class = args[0]
+		 	obj_id = args[1]
+		 	key = obj_class + "." + obj_id
 
+		 	attribute_name = args[2]
+			attribute_value = args[3]
 
+			if (attribute_value[0] == '"'):
+				attribute_value = attribute_value[1:-1]
+			if hasattr(obj, attribute_name):
+				type_ = type(getattr(obj, attribute_name))
+				if (type_ in [str, float, int]):
+					attribute_value = type_(attribute_value)
+					setattr(0bj, attribute_name, attribute_value)
+				else:
+					setattr(0bj, attribute_name, attribute_value)
+					storage.save()
 	 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
