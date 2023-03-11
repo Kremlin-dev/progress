@@ -101,6 +101,20 @@ class HBNBCommand(cmd.Cmd):
 			else:
 				setattr(obj, attribute_name, attribute_value)
 			storage.save()
-	 
+	
+	def default(self,arg):
+		args = arg.split(".")
+		if (args[0] in self.__classes):
+			if (args[1] == "all()"):
+				self.do_all(args[0])
+			elif (args[1] == "count()"):
+				list_ = [v for k, v in storage.all().items() if k.startswith(arg[0])]
+				print(len(list_))
+			elif (args[1].startswith("show")):
+				id_ = args[1].split('"')[1]
+				self.do_show(f"{args[0]} {id_}")
+				
+
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
