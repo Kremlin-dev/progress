@@ -87,10 +87,9 @@ class HBNBCommand(cmd.Cmd):
 		else:
 			obj_class = args[0]
 			obj_id = args[1]
-		 	key = obj_class + "." + obj_id
+			key = obj_class + "." + obj_id
 			attribute_name = args[2]
 			attribute_value = args[3]
-
 			if (attribute_value[0] == '"'):
 				attribute_value = attribute_value[1:-1]
 			if hasattr(obj, attribute_name):
