@@ -113,8 +113,23 @@ class HBNBCommand(cmd.Cmd):
 			elif (args[1].startswith("show")):
 				id_ = args[1].split('"')[1]
 				self.do_show(f"{args[0]} {id_}")
-				
+			elif (args[1].startswith("destroy")):
+				id_ = args[1].split('"')[1]
+				self.do_destroy(f"{args[0]} {id_}")
+			elif (args[1].startswith("update")):
+				split_ = args[1].split('(')
+				split_ = split_[1].split(')')
+				if ('{') in split_[0]:
+                    # if a dictionary is passed
+                    id_strip = split_[0].split(', {')
+                    id_strip = id_strip[0].split(', {')
+                    id_ = id_strip[0].strip('"')
 
+                    split_ = '{' + (split_[0].split('{'))[1]
+                    dict_ = eval(split_.strip('"'))
 
+                    if type(dict_) == dict:
+                        for k, v in dict_.items():
+                            self.do_update(f"{args[0]} {id_} {k} {v}")
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
