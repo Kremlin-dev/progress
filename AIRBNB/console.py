@@ -85,11 +85,10 @@ class HBNBCommand(cmd.Cmd):
 		elif (len(args) == 3):
 			print("** value missing **")
 		else:
-		 	obj_class = args[0]
+			obj_class = args[0]
 		 	obj_id = args[1]
 		 	key = obj_class + "." + obj_id
-
-		 	attribute_name = args[2]
+			attribute_name = args[2]
 			attribute_value = args[3]
 
 			if (attribute_value[0] == '"'):
