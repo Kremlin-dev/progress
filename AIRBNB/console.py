@@ -26,7 +26,7 @@ class HBNBCommand(cmd.Cmd):
 			print("** class doesn't exist")
 		else:
 		 new_object = eval(f"{args[0]}")()
-		 print(new_oobject.id)
+		 print(new_object.id)
 		 storage.save()
 	def do_show(self, arg):
 		args = arg.split()
