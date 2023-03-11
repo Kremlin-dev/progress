@@ -87,7 +87,8 @@ class HBNBCommand(cmd.Cmd):
 		else:
 			obj_class = args[0]
 			obj_id = args[1]
-			key = obj_class + "." + obj_id
+			obj_key = obj_class + "." + obj_id
+			obj = storage.all()[obj_key]
 			attribute_name = args[2]
 			attribute_value = args[3]
 			if (attribute_value[0] == '"'):
@@ -97,9 +98,9 @@ class HBNBCommand(cmd.Cmd):
 				if (type_ in [str, float, int]):
 					attribute_value = type_(attribute_value)
 					setattr(obj, attribute_name, attribute_value)
-				else:
-					setattr(obj, attribute_name, attribute_value)
-					storage.save()
+			else:
+				setattr(obj, attribute_name, attribute_value)
+			storage.save()
 	 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
