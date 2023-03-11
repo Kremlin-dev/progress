@@ -120,8 +120,7 @@ class HBNBCommand(cmd.Cmd):
 				split_ = args[1].split('(')
 				split_ = split_[1].split(')')
 				if ('{') in split_[0]:
-                    # if a dictionary is passed
-                    id_strip = split_[0].split(', {')
+					id_strip = split_[0].split(', {')
                     id_strip = id_strip[0].split(', {')
                     id_ = id_strip[0].strip('"')
 
