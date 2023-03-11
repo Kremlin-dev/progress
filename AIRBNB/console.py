@@ -129,5 +129,12 @@ class HBNBCommand(cmd.Cmd):
 					if type(dict_) == dict:
 						for k, v in dict_.items():
 							self.do_update(f"{args[0]} {id_} {k} {v}")
+				else:
+					split_ = split_[0].split(', ')
+					id_ = split_[0].strip('"')
+					attr_name = split_[1].strip('"')
+					attr_value = split_[2].strip('"')
+					self.do_update(f"{args[0]} {id_} {attr_name} {attr_value}")
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
