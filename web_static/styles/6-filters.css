@@ -39,9 +39,36 @@ button{
     margin-top: 0;
     margin-left: 30px;
 }
-.popover{
-   background-color:#FAFAFA ;
-   width: 100%;
-   list-style: none;
-   padding-inline-start: 0;
+.popover {
+    Display: none;
+    background-color: #FAFAFA;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    list-style-type: none;
+    padding-inline-start: 0;
+    padding: 30px 0;
+    margin-top: 19px;
+    margin-bottom: 0px;
+}
+.popover h2 {
+    font-size: 16px;
+    margin-left: 20px;
+    margin-bottom: 0px;
+    margin-top:0;
+}
+
+h2.spacing {
+    margin-top: 20px;
+}
+
+.popover li {
+    margin-left: 40px;
+}
+
+.locations:hover .popover {
+    Display: block;
+}
+
+.amenities:hover .popover {
+    Display: block;
 }
