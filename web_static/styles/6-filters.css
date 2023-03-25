@@ -39,3 +39,9 @@ button{
     margin-top: 0;
     margin-left: 30px;
 }
+.popover{
+   background-color:#FAFAFA ;
+   width: 100%;
+   list-style: none;
+   padding-inline-start: 0;
+}
