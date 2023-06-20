@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Login Page</title>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="#">home</a></li>
+            <li><a href="#">help</a></li>
+            
+        </ul>
+    </nav>
+</header>
+<main>
+    <form action="{{ url_for('login') }}", method="post">
+        <h5>Enter Details</h5>
+        <div><input type="text" name="FirstName" placeholder="Enter First Name" required> </div>
+        <div><input type="text" name="LastName" placeholder="Enter Lasst Name"required> </div>
+        <div><input type="submit" value="login"> </div>
+
+    </form>
+</main>
+<footer>
+    <h5>Implemented By: <a href="google.com">Kremlin</a></h5>
+
+</footer>
+    
+</body>
+</html>
