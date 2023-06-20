@@ -11,7 +11,5 @@ int main()
    {
     cout << "The index of: " << myArray[i] << " is " << i << endl;  
    }
-
-   
     return (0);
 }
