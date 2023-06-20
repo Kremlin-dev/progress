@@ -19,15 +19,15 @@ class Person(db.Model):
 
 @app.route('/')
 def homepage():
-    return render_template('Click.html')
+    return ' <a href="/login"><button>Click Here</button></a>'
 
-@app.route('/login', methods=['post'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     FirstName =request.form["FirstName"]
-    LastName =request.form["LasttName"]
+    LastName =request.form["LastName"]
     entry = Person(FirstName, LastName)
     db.session.add(entry)
-    db.commit()
+    db.session.commit()
     return render_template('index.html')
 
 if __name__ == "__main__":
