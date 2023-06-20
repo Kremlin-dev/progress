@@ -30,4 +30,3 @@ const car = {type: "Honda", model: "Civic", Year: "2005"};
 
 // ie: car.type;
 //to access a method of an object use objectName.methodName();
-
