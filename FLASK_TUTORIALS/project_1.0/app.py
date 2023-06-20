@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/in/python3
 
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
@@ -10,7 +10,7 @@ db = SQLAlchemy(app)
 
 class Person(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    FirstName = db.Column(db.String(40), nulllable=False)
+    FirstName = db.Column(db.String(40), nullable=False)
     LastName = db.Column(db.String(40), nullable= False)
 
     def __init__(self, FirstName, LastName):
@@ -19,7 +19,8 @@ class Person(db.Model):
 
 @app.route('/')
 def homepage():
-    return "Hello World"
+    return render_template('Click.html')
+
 @app.route('/login', methods=['post'])
 def login():
     FirstName =request.form["FirstName"]
