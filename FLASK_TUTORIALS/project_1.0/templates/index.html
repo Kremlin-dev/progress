@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
     <title>Login Page</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
     </nav>
 </header>
 <main>
-    <form action="{{ url_for('login') }}", method="post">
+    <form action="/login", method="post">
         <h5>Enter Details</h5>
         <div><input type="text" name="FirstName" placeholder="Enter First Name" required> </div>
         <div><input type="text" name="LastName" placeholder="Enter Last Name"required> </div>
@@ -27,7 +27,7 @@
     </form>
 </main>
 <footer>
-    <h5>Implemented By: <a href="google.com">Kremlin</a></h5>
+    <h5>Implemented By: <a href="https://github.com/AI-Amponsah">Kremlin</a></h5>
 
 </footer>
     
