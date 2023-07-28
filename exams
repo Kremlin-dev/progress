@@ -1,0 +1,26 @@
+Asssumptions made:
+
+Each user can have only one primary shipping address associated with their account
+Each product can be associated with only one seller
+Each product can belong to one or more categories
+Each order is associated with one buyer and can have multiple products
+Each order requires a payment
+Buyers can provide reviews for products they have purchased
+
+Cardinalities:
+
+Users to Shipping Addresses: 1-to-1 (assuming each user has one primary shipping address).
+
+Sellers to Products: 1-to-many (assuming each product is associated with only one seller).
+
+Categories to Products: many-to-many (assuming each product can belong to multiple categories and each category can have multiple products).
+
+Users to Orders: 1-to-many (assuming each user can place multiple orders).
+
+Users to Reviews: 1-to-many (assuming each user can provide multiple reviews).
+
+Products to Reviews: 1-to-many (assuming each product can have multiple reviews).
+
+Orders to Payments: 1-to-1 (assuming each order requires a single payment).
+
+Users to Orders to Products: many-to-many (assuming each order can have multiple products and each product can be in multiple orders).
