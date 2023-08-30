@@ -16,3 +16,11 @@ console.log(z);
 
 let w = product(2, 5);
 console.log(w);
+
+let array1 = [1,3,6];
+let array2 = [...array1];
+console.log(array2);
+for(let h of array1)
+{
+    console.log(h)
+}
