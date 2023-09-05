@@ -42,3 +42,16 @@ promise.then((result)=>{
     console.log(result)
     console.log("Here I am");
 })
+
+getFullResponseFromAPI(success)
+{
+    return new Promise((resolve, reject) => {
+        if (success){
+            resolve({status: 200, body: 'success'})
+        }
+        else{
+            reject (new Error())
+            
+        }
+    })
+}
