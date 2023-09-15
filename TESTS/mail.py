@@ -1,13 +1,16 @@
+# This piece of code is used to send an external document via email 
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 
+#imported  libraries need 
+
 smtp_server = 'smtp.gmail.com'
 smtp_port = 587
 smtp_username = 'yawamp27@gmail.com'
 smtp_password = 'qmiatkbgtzghitya' 
-
+#
 subject = 'Internship form'
 message = 'I am trying it out'
 

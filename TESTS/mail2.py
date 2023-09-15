@@ -10,7 +10,7 @@ smtp_password = 'qmiatkbgtzghitya'
 subject = 'Greetings'
 message = 'Hello Myles'
 
-msg = MIMEMultipart()
+msg = MIMEMultipart()       
 msg['From'] = smtp_username
 msg['To'] = 'johnmyles523@gmail.com'
 msg['Subject'] = subject
