@@ -7,26 +7,24 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 import os
 
-# Email configuration
+
 smtp_server = 'smtp.gmail.com'
 smtp_port = 587
 smtp_username = 'yawamp27@gmail.com'
 smtp_password = 'qmiatkbgtzghitya'
 
-# Email details
 subject = 'Modified Internship form'
 message = 'I am trying it out'
 
-# Names to insert into the PDF
-name_to_insert = 'Cyril Dzantor'
+name_to_insert = ' 26th August 2023 and 6th January 2024.'
 name_to_insert1 = 'Kumasi'
 name_to_insert2 = '6th September'
 
 custom_page = 'custom_page.pdf'
 c = canvas.Canvas(custom_page, pagesize=letter)
-c.drawString(50, 750, f"Name: {name_to_insert}")
-c.drawString(50, 720, f"Location: {name_to_insert1}")
-c.drawString(50, 690, f"Date: {name_to_insert2}")
+c.drawString(80, 389, f"Name: {name_to_insert}")
+c.drawString(70, 650, f"Location: {name_to_insert1}")
+c.drawString(180, 540, f"Date: {name_to_insert2}")
 c.save()
 
 pdf_path = 'mi.pdf'
