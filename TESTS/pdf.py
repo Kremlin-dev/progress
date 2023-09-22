@@ -16,18 +16,21 @@ smtp_password = 'qmiatkbgtzghitya'
 subject = 'Modified Internship form'
 message = 'I am trying it out'
 
-name_to_insert = ' 26th August 2023 and 6th January 2024.'
-name_to_insert1 = 'Kumasi'
-name_to_insert2 = '6th September'
-
+name_to_insert = 'Isaac Yaw Amponsah'
+name_to_insert1 = 'Computer Engineering'
+name_to_insert2 = '0558507341'
+name_to_insert3 = '19th September, 2023'
+name_to_insert4 = '19th September, 2023 to 19th October, 2023'
 custom_page = 'custom_page.pdf'
 c = canvas.Canvas(custom_page, pagesize=letter)
-c.drawString(80, 389, f"Name: {name_to_insert}")
-c.drawString(70, 650, f"Location: {name_to_insert1}")
-c.drawString(180, 540, f"Date: {name_to_insert2}")
+c.drawString(140, 420, f"{name_to_insert}")
+c.drawString(142, 397, f"{name_to_insert1}")
+c.drawString(145, 400, f"{name_to_insert2}")
+c.drawString(410, 522, f" {name_to_insert3}")
+c.drawString(180, 540, f"{name_to_insert4}")
 c.save()
 
-pdf_path = 'mi.pdf'
+pdf_path = 'm.pdf'
 pdf_reader = PdfReader(pdf_path)
 
 pdf_writer = PdfWriter()
@@ -47,7 +50,7 @@ with open(output_pdf_path, 'wb') as output_pdf_file:
 
 msg = MIMEMultipart()
 msg['From'] = smtp_username
-msg['To'] = 'johnmyles523@gmail.com'
+msg['To'] = 'kremlin2704@gmail.com'
 msg['Subject'] = subject
 msg.attach(MIMEText(message, 'plain'))
 
@@ -57,12 +60,12 @@ with open(output_pdf_path, 'rb') as attachment:
 part['Content-Disposition'] = f'attachment; filename="modified_m.pdf"'
 msg.attach(part)
 
-# Send the email
+
 try:
     server = smtplib.SMTP(smtp_server, smtp_port)
     server.starttls()
     server.login(smtp_username, smtp_password)
-    server.sendmail(smtp_username, 'johnmyles523@gmail.com', msg.as_string())
+    server.sendmail(smtp_username, 'kremlin2704@gmail.com', msg.as_string())
     server.quit()
     print("Email with attachment sent successfully!")
 except Exception as e:
