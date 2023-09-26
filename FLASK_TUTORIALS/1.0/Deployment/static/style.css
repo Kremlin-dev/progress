@@ -1,0 +1,105 @@
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+nav{
+    display: flex;
+   justify-content: space-between;
+}
+ul{
+    display: flex;
+    gap: 0px;
+}
+li{
+    list-style: none;
+    margin: 0px 5px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+footer{
+    margin-top: 500px;
+    text-align: center;
+}
+.parent{
+    background-color:rgb(247, 246, 246);
+    padding: 20px 20px;
+   
+}
+label{
+   margin-right: 50px; 
+   /* margin-bottom: 30px; */
+}
+
+.lastname{
+
+    margin-left: -0.2px;
+    width: 250px;
+    height: 25px;
+}
+.Screen{
+    margin-left: -15px;
+    width: 250px;
+    height: 25px;
+}
+
+.DoB{
+  
+    padding: 5px 6px;
+
+
+}
+.Country{
+    margin: 5px 17px;
+    width: 100px;
+    height: 30px;
+    
+}
+input[ type=email]{
+    margin: 5px 30px;
+    width: 250px;
+    height: 25px;
+
+}
+.phone{
+    margin-left: -27px;
+    width: 250px;
+    height: 25px;
+}
+.sex{
+   margin-left: 25px;
+   
+}
+.button{
+    display: flex;
+    justify-content: center;
+    margin-left: 150px;
+   
+  
+    padding: 8px 20px;
+}
+input{
+    margin: 5px 0px;
+  
+}
+.gender{
+    margin: 5px 0;
+}
+.someclass{
+    width: 250px;
+    height: 25px;
+}
+.flexDoB{
+    display: flex;
+    flex-direction: row;
+    align-items: normal;
+}
+#justthatOne{
+    margin-left: -8px;
+}
+ input[type="radio"] {
+    margin-right: 5px; 
+}
