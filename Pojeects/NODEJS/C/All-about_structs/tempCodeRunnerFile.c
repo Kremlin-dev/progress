@@ -1,0 +1,1 @@
+ if (num[i].value == 0 )
