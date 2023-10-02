@@ -1,14 +1,12 @@
 import React from 'react';
-import SignupComponent from './signup';
+import SignupForm from './SignupForm';
 
-function App() {
+const App = () => {
   return (
     <div>
-      <h1>Welcome to My React App</h1>
-      <SignupComponent />
-      {/* Add more components or content as needed */}
+      <SignupForm />
     </div>
   );
-}
+};
 
 export default App;
