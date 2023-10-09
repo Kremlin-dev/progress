@@ -23,29 +23,30 @@ const SignupForm = () => {
       console.log(data);
 
       // After successful signup, retrieve session data
-      await getSession();
+      // await getSession();
+
     } catch (error) {
       console.error('Error signing up:', error);
     }
   };
 
-  const getSession = async () => {
-    try {
-      const sessionResponse = await fetch('http://localhost:5000/get_session', {
-        method: 'GET',
-        credentials: 'include', // Include credentials to allow cookies
-      });
+  // const getSession = async () => {
+  //   try {
+  //     const sessionResponse = await fetch('http://localhost:5000/get_session', {
+  //       method: 'GET',
+  //       credentials: 'include', // Include credentials to allow cookies
+  //     });
 
-      if (!sessionResponse.ok) {
-        throw new Error(`HTTP error! Status: ${sessionResponse.status}`);
-      }
+  //     if (!sessionResponse.ok) {
+  //       throw new Error(`HTTP error! Status: ${sessionResponse.status}`);
+  //     }
 
-      const sessionData = await sessionResponse.json();
-      console.log('Session data:', sessionData);
-    } catch (error) {
-      console.error('Error getting session:', error);
-    }
-  };
+  //     const sessionData = await sessionResponse.json();
+  //     console.log('Session data:', sessionData);
+  //   } catch (error) {
+  //     console.error('Error getting session:', error);
+  //   }
+  // };
   return (
     <div>
       <h2>Signup</h2>
