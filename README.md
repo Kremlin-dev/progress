@@ -1,2 +1,2 @@
-# progress
-To track my PROGRAMMING journey.
+# This repo tracks my programming  Learning Journey with multiple stacks
+
