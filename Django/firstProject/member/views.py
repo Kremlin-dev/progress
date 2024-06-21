@@ -21,3 +21,5 @@ def index(request):
     user.save()
     template = loader.get_template('index.html')
     return HttpResponse(template.render())
+
+    
