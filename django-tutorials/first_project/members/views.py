@@ -6,7 +6,6 @@ from .models import login
 def home(request):
 
     users = login.objects.all().values()
-    print(users)
     template = loader.get_template('index.html')
     context ={
         'users': users,
