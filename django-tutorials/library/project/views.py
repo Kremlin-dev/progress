@@ -8,7 +8,7 @@ def book_list(request):
     allBooks = book.objects.all().values()
     template = loader.get_template('book_list.html')
     context = {
-        'books': allBooks
+        'allBooks': allBooks
     }
  
     return HttpResponse(template.render(context, request))
