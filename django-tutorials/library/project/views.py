@@ -4,6 +4,11 @@ from django.template import loader
 from .models import book
 
 
+def home(request):
+    template = loader.get_template('home.html')
+
+    return HttpResponse(template.render())
+    
 def book_list(request):
     allBooks = book.objects.all().values()
     template = loader.get_template('book_list.html')
@@ -37,11 +42,10 @@ def add_book(request):
             description= description,
             published_date= published_date
         )
-
         newdata.save()
-
         return HttpResponse(template.render())
-       
+
+
 def update_book(request):
      if request.method == 'POST':
         title = request.POST.get('title')
@@ -58,8 +62,8 @@ def update_book(request):
             update.published_date= published_date
         
             update.save()
-
         return HttpResponse(template.render()) 
+
 def delete_book(request):
      if (request.POST):
         title = request.POST.get('title')
