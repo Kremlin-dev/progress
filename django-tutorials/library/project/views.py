@@ -8,7 +8,7 @@ def home(request):
     template = loader.get_template('home.html')
 
     return HttpResponse(template.render())
-    
+
 def book_list(request):
     allBooks = book.objects.all().values()
     template = loader.get_template('book_list.html')
