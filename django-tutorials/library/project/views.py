@@ -70,6 +70,3 @@ def delete_book(request):
         if deleteBook:
             deleteBook.delete()
         return HttpResponse(template.render())
-
-
-
