@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book List</title>
-</head>
-<body>
-    <h1> Welcome to My BookStore</h1>
+{% extends "master.html" %}
 
+{% block title %}
+ All Book Lists
+
+{% endblock %}
+
+<body>
+{% block content %}
     <ul>
         {% for book in allBooks %}
         <li> <strong> Title</strong> {{ book.title }}</li>
@@ -20,5 +19,4 @@
 
     <p><a href="{%  url 'homepage' %}"> << Go Back </a></p>
     
-</body>
-</html>
+{% endblock %}
