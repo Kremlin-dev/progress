@@ -44,8 +44,7 @@ def add_book(request):
         )
         newdata.save()
         return HttpResponse(template.render())
-
-
+        
 def update_book(request):
      if request.method == 'POST':
         title = request.POST.get('title')
