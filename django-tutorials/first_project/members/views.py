@@ -49,6 +49,12 @@ def sign(request):
             ]
 
         }
+
+        template = loader.get_template('data.html')
+
+        return HttpResponse(template.render(context, request))
+
+   
     signup = signupForm()
     form = {
             'form':signup
