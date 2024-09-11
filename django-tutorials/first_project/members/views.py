@@ -16,14 +16,12 @@ def home(request):
 
 def login(request):
     if request.method=="POST":
-        form = userform(request.POST)
-        if form.is_valid():
-            username = form.cleaned_data['username']
-            email = form.cleaned_data['email']
-            password = form.cleaned_data['password']
-            print(username, email, password)
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        print(username, email, password)
 
-            return HttpResponse("Form submitted successfully")
+        return HttpResponse("Form submitted successfully")
 
     form = userform()
 
