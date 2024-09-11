@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.template import loader
 from .models import login
 
-from .forms import userform
+from .forms import userform, signupForm
 
 def home(request):
 
@@ -32,3 +32,29 @@ def login(request):
 
     return HttpResponse(template.render(context, request))
 
+
+def sign(request):
+    if request.method=="POST":
+        firstname = request.POST.get('firstname')
+        lastname = request.POST.get('lastname')
+        age = request.POST.get('age')
+        print("Received the details successfully")
+
+        context = {
+            'users':[{
+            'firstname': firstname,
+            'lastname':lastname,
+            'age':age
+            }
+            ]
+
+        }
+    signup = signupForm()
+    form = {
+            'form':signup
+        }
+
+    template = loader.get_template('signup.html')
+
+    return HttpResponse(template.render(form, request))
+ 

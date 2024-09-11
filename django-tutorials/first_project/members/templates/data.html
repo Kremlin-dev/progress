@@ -1,0 +1,17 @@
+{% extends "master.html" %}
+
+{% block title %} user data {% endblock %}
+
+
+{% block content %}
+    {% for x in users %}
+
+        <ul>
+            <li> {{ x.firstname}}</li>
+            <li> {{ x.lastname}}</li>
+            <li> {{ x.age}}</li>
+        </ul>
+
+    {% endfor %}
+    
+{% endblock %}

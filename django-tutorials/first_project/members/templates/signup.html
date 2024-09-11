@@ -1,0 +1,16 @@
+{% extends "master.html" %}
+
+{% block title %} signup form {% endblock %}
+
+{% block content %}
+
+<form action="{% url 'sign' %}" method="post">
+{% csrf_token %}
+
+{{ form.as_p }}
+
+<button type="submit"> Register</button>
+</form>
+
+{% endblock %}
+
