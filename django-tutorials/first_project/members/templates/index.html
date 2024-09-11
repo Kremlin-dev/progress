@@ -9,13 +9,13 @@ Djano-Tutorials
 
 
     <h1> Hello Welcome </h1>
-    <p>This is my first Django Html File </p>
-    <ul>
-        {% for x in users %}
-        <li> {{ x.username }} </li>
-        <li> {{ x.email }} </li>
-        <li> {{ x.password }} </li>
-        {% endfor %}
-    </ul>
+    <p>This is my first Django Form </p>
+    
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit"> submit</button>
+    </form>
 
     {% endblock %}
