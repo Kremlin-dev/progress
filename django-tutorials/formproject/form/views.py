@@ -3,8 +3,6 @@ from django.http import HttpResponse
 from .models import register
 from .forms import userRegistration
 
-
-
 def home(request):
 
     template = loader.get_template("index.html")

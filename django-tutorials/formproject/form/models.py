@@ -6,4 +6,3 @@ class register(models.Model):
     email = models.EmailField(max_length=255, unique=True)
     telephone = models.CharField(max_length=10, unique=True)
 
-# Create your models here.
