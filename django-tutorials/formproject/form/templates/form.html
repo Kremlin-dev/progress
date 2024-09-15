@@ -3,13 +3,21 @@
 
 {% block title %} User Registration {% endblock %}
 
-
-
-
 {% block content %}
 
+{% crsf_token %}
+
+{% form.as_p %}
+
+    {% for field in forms %}
+
+        <ul>
+            <li> {{ field.firstName }}</li>
+            <li> {{ field.lastName }}</li>
+            <li> {{ field.email }}</li>
+             <li> {{ field.telephone }}</li>
+        </ul>
+    {% endfor %}
 
 
-
-{% endblock %
-}
+{% endblock %}
