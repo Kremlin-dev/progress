@@ -5,19 +5,13 @@
 
 {% block content %}
 
-{% crsf_token %}
+<form action="{% url 'signup' %}" method="post">
 
-{% form.as_p %}
+{% csrf_token %}
 
-    {% for field in forms %}
+{{ form.as_p }}
+<button type="submit"> Submit </button>
+</form>
 
-        <ul>
-            <li> {{ field.firstName }}</li>
-            <li> {{ field.lastName }}</li>
-            <li> {{ field.email }}</li>
-             <li> {{ field.telephone }}</li>
-        </ul>
-    {% endfor %}
-
-
+{{ message }}
 {% endblock %}

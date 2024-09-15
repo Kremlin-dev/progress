@@ -9,7 +9,6 @@ def home(request):
 
     return HttpResponse(template.render())
 
-
 def signup(request):
     if request.method == "POST":
         firstName = request.POST.get("firstName")
@@ -19,7 +18,7 @@ def signup(request):
 
         newdata = register(
 
-            firstName=firstName,
+            firstName = firstName,
             lastName = lastName,
             email = email,
             telephone = telephone
@@ -29,17 +28,17 @@ def signup(request):
         template = loader.get_template("form.html")
 
         message = "Data Receved and saved sucessfully"
-        return HttpResponse(template.render(request, message=message))
+        return HttpResponse(template.render({"message": message},request))
 
     form = userRegistration()
 
     context = {
-        "form" : form
+        "form" : form,
     }
 
-    template = laoder.get_template("form.html")
+    template = loader.get_template("form.html")
 
-    return HttpResponse(template.render(request, context))
+    return HttpResponse(template.render(context, request))
 
 
 
