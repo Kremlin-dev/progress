@@ -41,7 +41,19 @@ def signup(request):
     return HttpResponse(template.render(context, request))
 
 
+def getData(request):
 
+    if request.method == 'GET':
 
+        users = register.objects.filter(firstName="Isaac").values()
 
-# Create your views here.
+        context = {
+            'register': users
+        }
+
+        template = loader.get_template('data.html')
+
+        return HttpResponse(template.render(context, request))
+
+    return HttpResponse("Post request not required in this view")
+

@@ -1,0 +1,19 @@
+{% extends 'master.html' %}
+
+{% block title %} Retrieved Data {% endblock %}
+
+{% block content %}
+
+<p> {{ register }}</p>
+{% for users in register %}
+
+<ul>
+    <li> {{ users.firstName }}</li>
+    <li> {{ users.lastName }}</li>
+    <li> {{ users.email }}</li>
+    <li> {{ users.telephone }}</li>
+</ul>
+{% endfor %}
+
+
+{% endblock %}
