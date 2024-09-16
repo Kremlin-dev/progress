@@ -4,10 +4,16 @@
 {% block title %} Homepage{% endblock %}
 
 
-
-
 {% block content %}
 
 <h1> Welcome to the Home Page </h1>
 <p> Click on the signup to register<a href="{% url 'signup' %}"> Register </a></p>
+
+
+{% if 1 == 2 %}
+<h1> Executed an if statement</h1>
+{% else %}
+<p> Else blocke executed</p>
+
+{% endif %}
 {% endblock %}
