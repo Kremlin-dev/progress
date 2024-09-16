@@ -1,16 +1,17 @@
 from django.contrib import admin
-from .models import register
 
-class myadminsite(admin.AdminSite):
-    site_header = "REGISTER ADMIN"
-    site_title = 'Kremlin-Dev'
-    index_title = "admin"
+from .models import hostel
 
-siteadmin = myadminsite(name='kremlin')
 
-class registeradmin(admin.ModelAdmin):
-    list_display = ("firstName", "lastName", "email", "telephone")
+class hostelpanel(admin.ModelAdmin):
+    list_display =("hostelName", "location", "manager", "phone", "rooms")
 
-siteadmin.register(register, registeradmin)
 
-# Register your models here.
+class adminsite(admin.AdminSite):
+    site_header = "Campus Hostel Finder Panel"
+    site_title = "Manager Panel"
+    index_site = "CHF admin"
+
+siteadmin = adminsite(name='siteadmin')
+
+siteadmin.register(hostel, hostelpanel)
