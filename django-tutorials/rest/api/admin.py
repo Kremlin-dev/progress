@@ -12,7 +12,7 @@ class adminsite(admin.AdminSite):
 
 siteadmin = adminsite(name = 'siteadmin')
 
-siteadmin.site.register(userinfo, userinfoPanel)
+siteadmin.register(userinfo, userinfoPanel)
 
 
 
