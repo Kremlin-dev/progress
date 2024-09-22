@@ -57,3 +57,5 @@ def getData(request):
 
     return HttpResponse("Post request not required in this view")
 
+    
+
