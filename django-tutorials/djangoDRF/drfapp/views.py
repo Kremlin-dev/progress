@@ -17,14 +17,14 @@ def create_note(request):
     data = NoteSerializer(data = request.data)
 
     if data.is_valid():
-        data.save()
+        data.save(owner=request.user.username)
         return Response(data.data)
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 @authentication_classes([JWTAuthentication])
 def get_note(request):
-    note = Note.objects.all()
+    note = Note.objects.filter(owner=request.user.username)
     serializer = NoteSerializer(note, many=True)
 
     return Response(serializer.data)
@@ -32,7 +32,7 @@ def get_note(request):
 @api_view(['PATCH'])
 def update_note(request,id):
 
-    note = Note.objects.filter(id =id)
+    note = Note.objects.get(id =id, owner = request.user.username)
 
     if note is not None:
         serializer = NoteSerializer(data = request.data)
@@ -47,7 +47,7 @@ def update_note(request,id):
 @api_view(['DELETE'])
 def delete_note(request, id):
 
-     note = Note.objects.filter(id =id)
+     note = Note.objects.get(id =id, owner=request.user.username)
 
      if note is not None:
          note.delete()
