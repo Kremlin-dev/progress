@@ -3,6 +3,8 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from  .serializer import NoteSerializer
+from models import Note
 
 
 
@@ -11,12 +13,21 @@ from rest_framework.response import Response
 @permission_classes([IsAuthenticated])
 @authentication_classes([JWTAuthentication])
 def create_note(request):
-    pass
+    
+    data = NoteSerializer(data = request.data)
+
+    if data.is_valid():
+        data.save()
+        return Response(data.data)
 
 @api_view(['GET'])
+@permssion_classes([IsAuthenticated])
+@authentication([JWTAuthentication])
 def get_note(request):
-    pass
+    note = Note.objects.all()
+    serializer = NoteSerializer(note, many=True)
 
+    return Response(serializer.data)
 
 @api_view(['PATCH'])
 def update_note(request):
