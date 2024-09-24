@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.response import Response
 from  .serializer import NoteSerializer
-from models import Note
+from .models import Note
 
 
 
@@ -21,8 +21,8 @@ def create_note(request):
         return Response(data.data)
 
 @api_view(['GET'])
-@permssion_classes([IsAuthenticated])
-@authentication([JWTAuthentication])
+@permission_classes([IsAuthenticated])
+@authentication_classes([JWTAuthentication])
 def get_note(request):
     note = Note.objects.all()
     serializer = NoteSerializer(note, many=True)
