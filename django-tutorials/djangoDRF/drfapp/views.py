@@ -30,13 +30,30 @@ def get_note(request):
     return Response(serializer.data)
 
 @api_view(['PATCH'])
-def update_note(request):
-    pass
+def update_note(request,id):
+
+    note = Note.objects.filter(id =id)
+
+    if note is not None:
+        serializer = NoteSerializer(data = request.data)
+
+        if serializer.is_valid():
+            serializer.save()
+
+            return Response(serializer.data)
+    
 
 
 @api_view(['DELETE'])
-def delete_note(request):
-    pass
+def delete_note(request, id):
+
+     note = Note.objects.filter(id =id)
+
+     if note is not None:
+         note.delete()
+
+         return Response({"message0":"deleted"})
+    
 
 
 # Create your views here.
