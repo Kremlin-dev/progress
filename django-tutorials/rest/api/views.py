@@ -3,7 +3,7 @@ from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import userinfo
-
+from rest_framework.generics import ListAPIView, CreateAPIView
 from rest_framework.views import APIView
 
 from .serializer import userinfoSerializer
@@ -17,7 +17,7 @@ def getdata(request):
     serializer = userinfoSerializer(data, many=True)
     return Response(serializer.data)
 
-@api_view(["POST"])
+@api_view(["POST"]) # function based views
 def postdata(request):
     serializer = userinfoSerializer(data = request.data)
     if serializer.is_valid():
@@ -25,7 +25,7 @@ def postdata(request):
         return Response(serializer.data)
     
 
-class dataView(APIView):
+class dataView(APIView): # class based views
     def get(self, request):
         data = userinfo.objects.all()
 
@@ -42,4 +42,3 @@ class dataView(APIView):
             return Response(serializer.data)
 
 
-        
