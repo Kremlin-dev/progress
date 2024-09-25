@@ -3,11 +3,8 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.response import Response
-from  .serializer import NoteSerializer
+from  .serializer import NoteSerializer, registerSerializer
 from .models import Note
-
-
-
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
@@ -42,8 +39,6 @@ def update_note(request,id):
 
             return Response(serializer.data)
     
-
-
 @api_view(['DELETE'])
 def delete_note(request, id):
 
@@ -53,6 +48,14 @@ def delete_note(request, id):
          note.delete()
 
          return Response({"message0":"deleted"})
+     
+def register(request):
+
+    data = registerSerializer(data = request.data)
+    if data.is_valid():
+        data.save()
+
+        return Response(data.data)
     
 
 
