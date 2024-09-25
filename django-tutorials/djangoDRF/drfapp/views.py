@@ -1,10 +1,13 @@
 from django.shortcuts import render
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.response import Response
 from  .serializer import NoteSerializer, registerSerializer
 from .models import Note
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework import status
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
@@ -48,15 +51,28 @@ def delete_note(request, id):
          note.delete()
 
          return Response({"message0":"deleted"})
-     
+    
+@api_view(['POST'])  
+@permission_classes([AllowAny])
 def register(request):
-
     data = registerSerializer(data = request.data)
     if data.is_valid():
         data.save()
-
         return Response(data.data)
     
+@api_view(['POST'])
+@permission_classes([AllowAny])  
+def login(request):
+    serializer = TokenObtainPairSerializer(data=request.data)
 
+    if serializer.is_valid():
+        user = serializer.user 
+        refresh = RefreshToken.for_user(user)  
+        return Response({
+            'refresh': str(refresh),
+            'access': str(refresh.access_token),
+            'username': user.username,
+            'email': user.email
+        }, status=status.HTTP_200_OK)
 
-# Create your views here.
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
