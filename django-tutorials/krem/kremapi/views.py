@@ -2,36 +2,38 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.permissions import IsAuthenticated, AllowAny
-from rest_framework_simeplejwt.authentication import JWTAthentication
+from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework_simplejwt.tokens import RefreshToken
-from rest_framework_simplejwt.serializers import TokenObtainPairSeriliazer
-
-from django.contrib.auth import User
-from .serializers import UserSeralizer
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from .serializers import registerSerializer
 
 @api_view(['POST'])
-def register(requst):
+@permission_classes([AllowAny])
+def register(request):
 
-    serializer = UserSeralizer(data = requst.data)
+    serializer = registerSerializer(data = request.data)
 
     if serializer.is_valid():
 
         serializer.save()
 
         return Response(serializer.data)
+    
+    return Response({"message": "User not registerd"})
 
 
 @api_view(['POST'])
+@permission_classes([AllowAny])
 def login(request):
 
-    serializer = TokenObtainPairSeriliazer(data = request.data)
+    serializer = TokenObtainPairSerializer(data = request.data)
 
     if serializer.is_valid():
 
         user = serializer.user
 
         refresh = RefreshToken.for_user(user)
-        access = refresh.aceess_token
+        access = refresh.access_token
 
         return Response(
             {
@@ -41,6 +43,7 @@ def login(request):
                 'email': user.email
             }
         )
+    return Response({"message": "User not logged in"})
 
 
 
