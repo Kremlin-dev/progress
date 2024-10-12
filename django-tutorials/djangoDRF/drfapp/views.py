@@ -9,6 +9,8 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework import status
 
+
+
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 @authentication_classes([JWTAuthentication])
