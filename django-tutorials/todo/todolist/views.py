@@ -13,7 +13,6 @@ from django.contrib.auth import authenticate, login
 @permission_classes([AllowAny])
 def sign_up(request):
     user_serializer = UserSerializer(data = request.data)
-    print(user_serializer)
     if user_serializer.is_valid():
         user = user_serializer.save()
         refresh = RefreshToken.for_user(user)
@@ -89,7 +88,7 @@ def gettodo(request, id):
 def puttodo(request, id):
     data = todolist.objects.get(id=id)
     if data is not None:
-        data = TodolistSerializer(data = request.data)
+        data = TodolistSerializer(instance = data, data = request.data)
         if data.is_valid():
             data.save()
             return Response(data.data)

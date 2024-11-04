@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import todolist
 from django.contrib.auth.models import User
 class todolistpanel(admin.ModelAdmin):
-    list_display = ("title", "description", "completed")
+    list_display = ("title", "description", "completed","category", "priority")
 
 class siteadmin(admin.AdminSite):
     site_header="adminsite"
