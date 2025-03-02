@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Flip Game</title>
+</head>
+<body>
+    <h1>Guess the Coin Flip!</h1>
+    <p id="result">Result will appear here...</p>
+
+    <button onclick="flipCoin('Heads')" id ='head'>Heads</button>
+    <button onclick="flipCoin('Tails')" id = 'tail'>Tails</button>
+
+    <script>
+        function flipCoin(userGuess) {
+
+            const userValue = new Promise((resolve, reject)=>{
+                setTimeout(()=>{
+                    const coinResult = Math.random() > 0.5 ? "Heads" : "Tails";
+                    if (coinResult === userGuess){
+                        resolve(`Correct you prdicted ${userGuess}  and got ${coinResult}`)
+                    }else {
+                        reject(`Try again! You selected ${userGuess} and got ${coinResult}`)
+                    };
+
+                }, 200);
+
+            });
+
+            userValue.then((msg)=>{
+                document.getElementById('result').innerHTML=msg
+            }).catch((msg)=>{
+                document.getElementById('result').innerHTML=msg
+            });
+        };
+    </script>
+</body>
+</html>
