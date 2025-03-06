@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Guess Game</title>
+</head>
+<body>
+    <h1>Guess Today’s Weather!</h1>
+    <p id="result">Result will appear here...</p>
+
+    <button onclick="checkWeather('Sunny')">Sunny</button>
+    <button onclick="checkWeather('Rainy')">Rainy</button>
+
+    <script>
+        function checkWeather(userGuess) {
+            const weather = new Promise((resolve, reject)=>{
+
+                setTimeout(()=>{
+                    const rand = Math.random() > 0.5? "Sunny": "Rainy"
+
+                    if(rand === userGuess){
+                        resolve(`Great, The weather is ${rand} and you predicted ${userGuess}`)
+                    }
+                    else{
+                        reject(`Sorry, The weather is ${rand} and you predicted ${userGuess}`)
+                    }
+                }, 5000);
+
+            });
+            
+        }
+    </script>
+</body>
+</html>
